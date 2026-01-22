@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-primary: #bd24df;
+  --color-secondary: #2d6ade;
+  --font-inter: 'Inter', system-ui, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-body-bg dark:bg-body-bg-dark text-lightsky dark:text-lightsky-dark text-sm font-sans antialiased;
+  font-family: var(--font-inter);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+button {
+  @apply cursor-pointer transition-all duration-300;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  .gradient-text {
+    @apply bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent;
+  }
+  
+  .bg-gradient-primary {
+    @apply bg-gradient-to-r from-primary to-secondary;
+  }
+  
+  .bg-gradient-secondary {
+    @apply bg-gradient-to-r from-secondary to-primary;
+  }
+  
+  .glass-effect {
+    @apply bg-darkmode/80 dark:bg-darkmode-dark/80 backdrop-blur-md border border-border dark:border-border-dark;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+  }
+  
+  .card-hover {
+    @apply transition-all duration-300 hover:shadow-lg hover:-translate-y-1;
+  }
+  
+  .container {
+    @apply max-w-7xl mx-auto w-full px-4;
+  }
+}
