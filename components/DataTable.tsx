@@ -16,14 +16,14 @@ interface DataTableProps {
 
 export default function DataTable({ columns, data, onRowClick }: DataTableProps) {
   return (
-    <div className="overflow-x-auto rounded-2xl border border-border dark:border-border-dark">
-      <table className="table-auto w-full">
+    <div className="overflow-x-auto rounded-xl md:rounded-2xl border border-border dark:border-border-dark -mx-4 md:mx-0">
+      <table className="table-auto w-full min-w-[640px]">
         <thead>
           <tr className="text-lightsky dark:text-white bg-border dark:bg-border-dark rounded-2xl">
             {columns.map((column) => (
               <th
                 key={column.accessor}
-                className="px-4 py-4 text-left text-xs font-normal text-lightsky dark:text-white uppercase tracking-wider"
+                className="px-3 md:px-4 py-3 md:py-4 text-left text-xs font-normal text-lightsky dark:text-white uppercase tracking-wider"
               >
                 {column.header}
               </th>
@@ -44,7 +44,7 @@ export default function DataTable({ columns, data, onRowClick }: DataTableProps)
               {columns.map((column) => (
                 <td
                   key={column.accessor}
-                  className="px-4 py-6 text-sm text-lightsky dark:text-white"
+                  className="px-3 md:px-4 py-4 md:py-6 text-xs md:text-sm text-lightsky dark:text-white"
                 >
                   {column.render
                     ? column.render(row[column.accessor], row)

@@ -26,10 +26,10 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="min-h-screen bg-body-bg dark:bg-body-bg-dark pt-40">
+    <div className="min-h-screen bg-body-bg dark:bg-body-bg-dark pt-32 md:pt-40">
       <Header />
-      <main className="container py-16">
-        <div className="max-w-md mx-auto bg-tablebg dark:bg-tablebg-dark rounded-2xl border border-border dark:border-border-dark p-8 glass-effect">
+      <main className="container py-8 md:py-16 px-4">
+        <div className="max-w-md mx-auto bg-tablebg dark:bg-tablebg-dark rounded-xl md:rounded-2xl border border-border dark:border-border-dark p-6 md:p-8 glass-effect">
           <div className="flex items-center justify-center mb-6">
             <div className="bg-gradient-primary rounded-full p-4 shadow-md">
               <LogIn className="h-7 w-7 text-white" />

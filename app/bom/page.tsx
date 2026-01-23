@@ -86,17 +86,17 @@ export default function BOMPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-body-bg dark:bg-body-bg-dark pt-40">
+    <div className="min-h-screen bg-body-bg dark:bg-body-bg-dark pt-32 md:pt-40">
       <Header />
-      <main className="container py-14">
-        <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-lightsky dark:text-lightsky-dark mb-2">Bill of Materials</h1>
-        <p className="text-lightblue dark:text-lightblue-dark mb-8">Browse parts and component information</p>
+      <main className="container py-6 md:py-14 px-4">
+        <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-lightsky dark:text-lightsky-dark mb-2">Bill of Materials</h1>
+        <p className="text-sm md:text-base text-lightblue dark:text-lightblue-dark mb-6 md:mb-8">Browse parts and component information</p>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 md:gap-6">
           {/* Parts Table */}
-          <div className="lg:col-span-2 bg-tablebg dark:bg-tablebg-dark rounded-2xl border border-border dark:border-border-dark">
-            <div className="p-6 border-b border-border dark:border-border-dark">
-              <h2 className="text-xl font-semibold text-lightsky dark:text-lightsky-dark">PART LIST</h2>
+          <div className="lg:col-span-2 bg-tablebg dark:bg-tablebg-dark rounded-xl md:rounded-2xl border border-border dark:border-border-dark">
+            <div className="p-4 md:p-6 border-b border-border dark:border-border-dark">
+              <h2 className="text-lg md:text-xl font-semibold text-lightsky dark:text-lightsky-dark">PART LIST</h2>
             </div>
             <DataTable
               columns={columns}
@@ -106,8 +106,8 @@ export default function BOMPage() {
           </div>
 
           {/* Part Details Panel */}
-          <div className="bg-tablebg dark:bg-tablebg-dark rounded-2xl border border-border dark:border-border-dark p-6">
-            <h2 className="text-xl font-semibold text-lightsky dark:text-lightsky-dark mb-4">
+          <div className="bg-tablebg dark:bg-tablebg-dark rounded-xl md:rounded-2xl border border-border dark:border-border-dark p-4 md:p-6">
+            <h2 className="text-lg md:text-xl font-semibold text-lightsky dark:text-lightsky-dark mb-4">
               Component Manual
             </h2>
             {selectedPart ? (

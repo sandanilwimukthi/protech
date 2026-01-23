@@ -69,10 +69,10 @@ export default function MaintenancePage() {
 
   if (isPasswordProtected && !isAuthenticated) {
     return (
-      <div className="min-h-screen bg-body-bg dark:bg-body-bg-dark pt-40">
+      <div className="min-h-screen bg-body-bg dark:bg-body-bg-dark pt-32 md:pt-40">
         <Header />
-        <main className="container py-16">
-          <div className="max-w-md mx-auto bg-tablebg dark:bg-tablebg-dark rounded-2xl border border-border dark:border-border-dark p-8 glass-effect">
+        <main className="container py-8 md:py-16 px-4">
+          <div className="max-w-md mx-auto bg-tablebg dark:bg-tablebg-dark rounded-xl md:rounded-2xl border border-border dark:border-border-dark p-6 md:p-8 glass-effect">
             <h2 className="text-2xl font-bold text-lightsky dark:text-lightsky-dark mb-4">
               Maintenance Access
             </h2>
@@ -139,13 +139,13 @@ export default function MaintenancePage() {
   ];
 
   return (
-    <div className="min-h-screen bg-body-bg dark:bg-body-bg-dark pt-40">
+    <div className="min-h-screen bg-body-bg dark:bg-body-bg-dark pt-32 md:pt-40">
       <Header />
-      <main className="container py-14">
-        <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-lightsky dark:text-lightsky-dark mb-2">
+      <main className="container py-6 md:py-14 px-4">
+        <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-lightsky dark:text-lightsky-dark mb-2">
           Preventive Maintenance Schedule
         </h1>
-        <p className="text-lightblue dark:text-lightblue-dark mb-8">View and manage maintenance schedules by frequency</p>
+        <p className="text-sm md:text-base text-lightblue dark:text-lightblue-dark mb-6 md:mb-8">View and manage maintenance schedules by frequency</p>
 
         {/* Frequency Filter */}
         <div className="bg-tablebg dark:bg-tablebg-dark rounded-2xl border border-border dark:border-border-dark p-5 mb-6">
@@ -203,30 +203,30 @@ export default function MaintenancePage() {
 
             {/* Task Details */}
             {selectedTask && (
-              <div className="bg-tablebg dark:bg-tablebg-dark rounded-2xl border border-border dark:border-border-dark p-6">
-                <h2 className="text-xl font-semibold text-lightsky dark:text-lightsky-dark mb-4">
+              <div className="bg-tablebg dark:bg-tablebg-dark rounded-xl md:rounded-2xl border border-border dark:border-border-dark p-4 md:p-6">
+                <h2 className="text-lg md:text-xl font-semibold text-lightsky dark:text-lightsky-dark mb-4">
                   {selectedTask.name}
                 </h2>
                 <div className="space-y-4">
                   <div>
                     <label className="text-sm font-semibold text-lightblue dark:text-lightblue-dark mb-1 block">How to do it</label>
-                    <div className="mt-1 whitespace-pre-line text-sm text-lightsky dark:text-white bg-darkmode dark:bg-darkmode-dark p-4 rounded-lg border border-border dark:border-border-dark">
+                    <div className="mt-1 whitespace-pre-line text-xs md:text-sm text-lightsky dark:text-white bg-darkmode dark:bg-darkmode-dark p-3 md:p-4 rounded-lg border border-border dark:border-border-dark">
                       {selectedTask.howToDoIt || "No instructions available"}
                     </div>
                   </div>
                   <div>
                     <label className="text-sm font-semibold text-lightblue dark:text-lightblue-dark mb-1 block">Notes</label>
                     <textarea
-                      className="mt-1 w-full px-4 py-3 border border-border dark:border-border-dark rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition-all bg-darkmode dark:bg-darkmode-dark/50 text-lightsky dark:text-white placeholder:text-lightblue dark:placeholder:text-lightblue-dark"
+                      className="mt-1 w-full px-3 md:px-4 py-2.5 md:py-3 border border-border dark:border-border-dark rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition-all bg-darkmode dark:bg-darkmode-dark/50 text-sm md:text-base text-lightsky dark:text-white placeholder:text-lightblue dark:placeholder:text-lightblue-dark"
                       rows={3}
                       placeholder="Add notes..."
                     />
                   </div>
-                  <div className="flex items-center space-x-4">
-                    <button className="px-5 py-2.5 bg-gradient-primary text-white rounded-lg hover:bg-gradient-secondary transition-all font-semibold shadow-md hover:shadow-lg">
+                  <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4">
+                    <button className="flex-1 sm:flex-none px-4 md:px-5 py-2.5 bg-gradient-primary text-white rounded-lg hover:bg-gradient-secondary transition-all font-semibold shadow-md hover:shadow-lg text-sm md:text-base">
                       Mark as Completed
                     </button>
-                    <button className="px-5 py-2.5 bg-darkmode dark:bg-darkmode-dark text-lightblue dark:text-lightblue-dark rounded-lg hover:bg-border dark:hover:bg-border-dark transition-colors font-medium border border-border dark:border-border-dark">
+                    <button className="flex-1 sm:flex-none px-4 md:px-5 py-2.5 bg-darkmode dark:bg-darkmode-dark text-lightblue dark:text-lightblue-dark rounded-lg hover:bg-border dark:hover:bg-border-dark transition-colors font-medium border border-border dark:border-border-dark text-sm md:text-base">
                       Today
                     </button>
                   </div>
@@ -236,8 +236,8 @@ export default function MaintenancePage() {
           </div>
 
           {/* Sidebar */}
-          <div className="bg-tablebg dark:bg-tablebg-dark rounded-2xl border border-border dark:border-border-dark p-6">
-            <h3 className="text-lg font-semibold text-lightsky dark:text-lightsky-dark mb-4">Quick Actions</h3>
+          <div className="bg-tablebg dark:bg-tablebg-dark rounded-xl md:rounded-2xl border border-border dark:border-border-dark p-4 md:p-6">
+            <h3 className="text-base md:text-lg font-semibold text-lightsky dark:text-lightsky-dark mb-4">Quick Actions</h3>
             <div className="space-y-2">
               <button className="w-full text-left px-4 py-2.5 bg-darkmode dark:bg-darkmode-dark rounded-lg hover:bg-border dark:hover:bg-border-dark hover:text-primary transition-colors font-medium text-lightsky dark:text-white">
                 View All Tasks

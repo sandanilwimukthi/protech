@@ -154,71 +154,73 @@ export default function WorkOrdersPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-body-bg dark:bg-body-bg-dark pt-40">
+    <div className="min-h-screen bg-body-bg dark:bg-body-bg-dark pt-32 md:pt-40">
       <Header />
-      <main className="container py-14">
-        <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-lightsky dark:text-lightsky-dark mb-2">Open Work Orders</h1>
-        <p className="text-lightblue dark:text-lightblue-dark mb-8">View and manage work orders by date range</p>
+      <main className="container py-6 md:py-14 px-4">
+        <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-lightsky dark:text-lightsky-dark mb-2">Open Work Orders</h1>
+        <p className="text-sm md:text-base text-lightblue dark:text-lightblue-dark mb-6 md:mb-8">View and manage work orders by date range</p>
 
         {/* Date Range Filter Table */}
-        <div className="bg-tablebg dark:bg-tablebg-dark rounded-2xl mb-6 overflow-hidden border border-border dark:border-border-dark">
-          <table className="table-auto w-full">
-            <thead>
-              <tr className="text-lightsky dark:text-white bg-border dark:bg-border-dark rounded-2xl">
-                <th                 className="px-4 py-4 text-left text-xs font-normal text-lightsky dark:text-white uppercase tracking-wider">
-                  Range
-                </th>
-                <th className="px-4 py-4 text-left text-xs font-normal text-lightsky dark:text-white uppercase tracking-wider">
-                  From
-                </th>
-                <th className="px-4 py-4 text-left text-xs font-normal text-lightsky dark:text-white uppercase tracking-wider">
-                  To
-                </th>
-                <th className="px-4 py-4 text-left text-xs font-normal text-lightsky dark:text-white uppercase tracking-wider">
-                  Qty
-                </th>
-                <th className="px-4 py-4 text-left text-xs font-normal text-lightsky dark:text-white uppercase tracking-wider">
-                  Safety
-                </th>
-              </tr>
-            </thead>
-            <tbody>
-              {dateRanges.map((range, index) => {
-                const stats = getRangeStats(range);
-                return (
-                  <tr
-                    key={index}
-                    onClick={() => setSelectedRange(range.label)}
-                    className={`cursor-pointer transition-colors duration-150 border-b border-border dark:border-border-dark hover:bg-darkmode/50 dark:hover:bg-darkmode-dark/50 ${
-                      selectedRange === range.label ? "bg-darkmode dark:bg-darkmode-dark" : ""
-                    }`}
-                  >
-                    <td className="px-4 py-6 text-sm font-medium text-lightsky dark:text-white">
-                      {range.label}
-                    </td>
-                    <td className="px-4 py-6 text-sm text-lightblue dark:text-lightblue-dark">
-                      {range.from ? formatDate(range.from) : ""}
-                    </td>
-                    <td className="px-4 py-6 text-sm text-lightblue dark:text-lightblue-dark">
-                      {range.to ? formatDate(range.to) : ""}
-                    </td>
-                    <td className="px-4 py-6 text-sm font-semibold text-lightsky dark:text-white">
-                      {stats.qty}
-                    </td>
-                    <td className="px-4 py-6 text-sm font-semibold text-lightsky dark:text-white">
-                      {stats.safety}
-                    </td>
-                  </tr>
-                );
-              })}
-            </tbody>
-          </table>
+        <div className="bg-tablebg dark:bg-tablebg-dark rounded-xl md:rounded-2xl mb-4 md:mb-6 overflow-hidden border border-border dark:border-border-dark">
+          <div className="overflow-x-auto">
+            <table className="table-auto w-full min-w-[600px]">
+              <thead>
+                <tr className="text-lightsky dark:text-white bg-border dark:bg-border-dark rounded-2xl">
+                  <th className="px-3 md:px-4 py-3 md:py-4 text-left text-xs font-normal text-lightsky dark:text-white uppercase tracking-wider">
+                    Range
+                  </th>
+                  <th className="px-3 md:px-4 py-3 md:py-4 text-left text-xs font-normal text-lightsky dark:text-white uppercase tracking-wider">
+                    From
+                  </th>
+                  <th className="px-3 md:px-4 py-3 md:py-4 text-left text-xs font-normal text-lightsky dark:text-white uppercase tracking-wider">
+                    To
+                  </th>
+                  <th className="px-3 md:px-4 py-3 md:py-4 text-left text-xs font-normal text-lightsky dark:text-white uppercase tracking-wider">
+                    Qty
+                  </th>
+                  <th className="px-3 md:px-4 py-3 md:py-4 text-left text-xs font-normal text-lightsky dark:text-white uppercase tracking-wider">
+                    Safety
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                {dateRanges.map((range, index) => {
+                  const stats = getRangeStats(range);
+                  return (
+                    <tr
+                      key={index}
+                      onClick={() => setSelectedRange(range.label)}
+                      className={`cursor-pointer transition-colors duration-150 border-b border-border dark:border-border-dark hover:bg-darkmode/50 dark:hover:bg-darkmode-dark/50 ${
+                        selectedRange === range.label ? "bg-darkmode dark:bg-darkmode-dark" : ""
+                      }`}
+                    >
+                      <td className="px-3 md:px-4 py-4 md:py-6 text-xs md:text-sm font-medium text-lightsky dark:text-white">
+                        {range.label}
+                      </td>
+                      <td className="px-3 md:px-4 py-4 md:py-6 text-xs md:text-sm text-lightblue dark:text-lightblue-dark">
+                        {range.from ? formatDate(range.from) : ""}
+                      </td>
+                      <td className="px-3 md:px-4 py-4 md:py-6 text-xs md:text-sm text-lightblue dark:text-lightblue-dark">
+                        {range.to ? formatDate(range.to) : ""}
+                      </td>
+                      <td className="px-3 md:px-4 py-4 md:py-6 text-xs md:text-sm font-semibold text-lightsky dark:text-white">
+                        {stats.qty}
+                      </td>
+                      <td className="px-3 md:px-4 py-4 md:py-6 text-xs md:text-sm font-semibold text-lightsky dark:text-white">
+                        {stats.safety}
+                      </td>
+                    </tr>
+                  );
+                })}
+              </tbody>
+            </table>
+          </div>
         </div>
 
         {/* Work Orders Table */}
-        <div className="bg-tablebg dark:bg-tablebg-dark rounded-2xl border border-border dark:border-border-dark">
-          <div className="p-6 border-b border-border dark:border-border-dark">
-            <h2 className="text-xl font-semibold text-lightsky dark:text-lightsky-dark">
+        <div className="bg-tablebg dark:bg-tablebg-dark rounded-xl md:rounded-2xl border border-border dark:border-border-dark">
+          <div className="p-4 md:p-6 border-b border-border dark:border-border-dark">
+            <h2 className="text-lg md:text-xl font-semibold text-lightsky dark:text-lightsky-dark">
               Work Orders {selectedRange !== "all" && `- ${selectedRange}`}
             </h2>
           </div>

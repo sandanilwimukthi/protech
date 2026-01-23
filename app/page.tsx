@@ -49,35 +49,35 @@ export default function Home() {
   ];
 
   return (
-    <div className="min-h-screen bg-body-bg dark:bg-body-bg-dark pt-40">
+    <div className="min-h-screen bg-body-bg dark:bg-body-bg-dark pt-32 md:pt-40">
       <Header />
-      <main className="container py-14">
-        <div className="mb-12 text-center">
-          <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold text-lightsky dark:text-white mb-4">
+      <main className="container py-6 md:py-14 px-4">
+        <div className="mb-8 md:mb-12 text-center">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold text-lightsky dark:text-white mb-3 md:mb-4 px-4">
             Equipment Manual{" "}
             <span className="gradient-text">Platform</span>
           </h1>
-          <p className="text-lg text-lightblue dark:text-lightblue-dark max-w-2xl mx-auto">
+          <p className="text-base md:text-lg text-lightblue dark:text-lightblue-dark max-w-2xl mx-auto px-4">
             Access equipment documentation, maintenance schedules, and troubleshooting guides
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
           {quickLinks.map((link) => {
             const Icon = link.icon;
             return (
               <Link
                 key={link.title}
                 href={link.href}
-                className="group bg-tablebg dark:bg-tablebg-dark rounded-2xl shadow-lg p-6 card-hover border border-border dark:border-border-dark"
+                className="group bg-tablebg dark:bg-tablebg-dark rounded-xl md:rounded-2xl shadow-lg p-4 md:p-6 card-hover border border-border dark:border-border-dark"
               >
-                <div className={`${link.color} w-14 h-14 rounded-xl flex items-center justify-center mb-4 shadow-md group-hover:scale-110 transition-transform duration-300`}>
-                  <Icon className="h-7 w-7 text-white" />
+                <div className={`${link.color} w-12 h-12 md:w-14 md:h-14 rounded-xl flex items-center justify-center mb-3 md:mb-4 shadow-md group-hover:scale-110 transition-transform duration-300`}>
+                  <Icon className="h-6 w-6 md:h-7 md:w-7 text-white" />
                 </div>
-                <h2 className="text-xl font-semibold text-lightsky dark:text-lightsky-dark mb-2 group-hover:text-primary transition-colors">
+                <h2 className="text-lg md:text-xl font-semibold text-lightsky dark:text-lightsky-dark mb-2 group-hover:text-primary transition-colors">
                   {link.title}
                 </h2>
-                <p className="text-lightblue dark:text-lightblue-dark text-sm leading-relaxed">{link.description}</p>
+                <p className="text-lightblue dark:text-lightblue-dark text-xs md:text-sm leading-relaxed">{link.description}</p>
               </Link>
             );
           })}

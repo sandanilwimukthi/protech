@@ -55,30 +55,30 @@ export default function FaultsPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-body-bg dark:bg-body-bg-dark pt-40">
+    <div className="min-h-screen bg-body-bg dark:bg-body-bg-dark pt-32 md:pt-40">
       <Header />
-      <main className="container py-14">
+      <main className="container py-6 md:py-14 px-4">
         <div className="mb-6">
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-lightsky dark:text-lightsky-dark mb-2">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-lightsky dark:text-lightsky-dark mb-2">
             Faults and Troubleshooting
           </h1>
-          <p className="text-lightblue dark:text-lightblue-dark mb-6">Diagnose equipment faults and find solutions</p>
-          <div className="max-w-md">
+          <p className="text-sm md:text-base text-lightblue dark:text-lightblue-dark mb-4 md:mb-6">Diagnose equipment faults and find solutions</p>
+          <div className="w-full max-w-md">
             <input
               type="text"
               placeholder="Search by fault name or alarm code..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full px-4 py-3 border border-border dark:border-border-dark rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition-all bg-darkmode dark:bg-darkmode-dark/50 text-lightsky dark:text-white placeholder:text-lightblue dark:placeholder:text-lightblue-dark"
+              className="w-full px-4 py-2.5 md:py-3 border border-border dark:border-border-dark rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition-all bg-darkmode dark:bg-darkmode-dark/50 text-sm md:text-base text-lightsky dark:text-white placeholder:text-lightblue dark:placeholder:text-lightblue-dark"
             />
           </div>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 md:gap-6">
           {/* Faults List */}
-          <div className="lg:col-span-2 bg-tablebg dark:bg-tablebg-dark rounded-2xl border border-border dark:border-border-dark">
-            <div className="p-6 border-b border-border dark:border-border-dark">
-              <h2 className="text-xl font-semibold text-lightsky dark:text-lightsky-dark">Fault List</h2>
+          <div className="lg:col-span-2 bg-tablebg dark:bg-tablebg-dark rounded-xl md:rounded-2xl border border-border dark:border-border-dark">
+            <div className="p-4 md:p-6 border-b border-border dark:border-border-dark">
+              <h2 className="text-lg md:text-xl font-semibold text-lightsky dark:text-lightsky-dark">Fault List</h2>
             </div>
             <DataTable
               columns={columns}
@@ -88,8 +88,8 @@ export default function FaultsPage() {
           </div>
 
           {/* Fault Details Panel */}
-          <div className="bg-tablebg dark:bg-tablebg-dark rounded-2xl border border-border dark:border-border-dark p-6">
-            <h2 className="text-xl font-semibold text-lightsky dark:text-lightsky-dark mb-4">Fault Details</h2>
+          <div className="bg-tablebg dark:bg-tablebg-dark rounded-xl md:rounded-2xl border border-border dark:border-border-dark p-4 md:p-6">
+            <h2 className="text-lg md:text-xl font-semibold text-lightsky dark:text-lightsky-dark mb-4">Fault Details</h2>
             {selectedFault ? (
               <div className="space-y-6">
                 <div>

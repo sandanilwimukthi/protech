@@ -102,11 +102,11 @@ export default function CalibrationPage() {
           <DataTable columns={columns} data={mockCalibrations} />
         </div>
 
-        <div className="mt-6 bg-tablebg dark:bg-tablebg-dark rounded-2xl border border-border dark:border-border-dark p-6">
-          <h2 className="text-xl font-semibold text-lightsky dark:text-lightsky-dark mb-4">
+        <div className="mt-4 md:mt-6 bg-tablebg dark:bg-tablebg-dark rounded-xl md:rounded-2xl border border-border dark:border-border-dark p-4 md:p-6">
+          <h2 className="text-lg md:text-xl font-semibold text-lightsky dark:text-lightsky-dark mb-4">
             Validation Checklists
           </h2>
-          <p className="text-lightblue dark:text-lightblue-dark">
+          <p className="text-sm md:text-base text-lightblue dark:text-lightblue-dark">
             Validation checklists and records will be displayed here. This section can include
             Factory Acceptance Test (FAT) reports, run-off data, capability studies, and
             commissioning documentation.

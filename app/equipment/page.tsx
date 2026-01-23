@@ -134,9 +134,9 @@ export default function EquipmentPage() {
           </nav>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 md:gap-6">
           {/* Navigation Panel */}
-          <div className="lg:col-span-2 bg-tablebg dark:bg-tablebg-dark rounded-2xl border border-border dark:border-border-dark p-6">
+          <div className="lg:col-span-2 bg-tablebg dark:bg-tablebg-dark rounded-xl md:rounded-2xl border border-border dark:border-border-dark p-4 md:p-6">
             {currentLevel === "equipment" && (
               <div>
                 <h2 className="text-xl font-semibold text-lightsky dark:text-lightsky-dark mb-4">
@@ -230,8 +230,8 @@ export default function EquipmentPage() {
           </div>
 
           {/* Details Panel */}
-          <div className="bg-tablebg dark:bg-tablebg-dark rounded-2xl border border-border dark:border-border-dark p-6">
-            <h2 className="text-xl font-semibold text-lightsky dark:text-lightsky-dark mb-4">Details</h2>
+          <div className="bg-tablebg dark:bg-tablebg-dark rounded-xl md:rounded-2xl border border-border dark:border-border-dark p-4 md:p-6">
+            <h2 className="text-lg md:text-xl font-semibold text-lightsky dark:text-lightsky-dark mb-4">Details</h2>
             {selectedComponent ? (
               <div className="space-y-4">
                 <div>
